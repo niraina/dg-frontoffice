@@ -1,10 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Table } from 'react-bootstrap'
 import TableHead from '../components/TableHead'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchData } from '../features/Products/ProductsSlice';
+// import { Products } from '../interfaces/products';
 // import {CSVLink} from 'react-csv';
 
-const Products: React.FC = () => {
+const Products = () => {
   const headers = ["id", "name", "description"]
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // dispatch(fetchData())
+  }, [dispatch])
 
   return (
     <div className='container'>
